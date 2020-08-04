@@ -1,0 +1,18 @@
+{
+  "defaultFunctionName": "DurableFunctionsEntityClass",
+  "description": "$DurableFunctionsEntityClass_description",
+  "name": "Durable Functions entity",
+  "language": "C#",
+  "category": [
+    "$temp_category_durableFunctions"
+  ],
+  "categoryStyle": "other",
+  "enabledInTryMode": false,
+  "userPrompt": [],
+  "extensions": [
+    {
+      "id": "Microsoft.Azure.WebJobs.Extensions.DurableTask",
+      "version": "2.2.2"
+    }
+  ]
+}

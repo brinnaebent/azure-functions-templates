@@ -1,0 +1,10 @@
+﻿{
+  "bindings": [
+    {
+      "name": "context",
+      "type": "entityTrigger",
+      "direction": "in"
+    }
+  ],
+  "scriptFile": "../DurableFunctionsEntityHttpStart-TypeScript/index.ts"
+}
