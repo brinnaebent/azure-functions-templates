@@ -1,7 +1,7 @@
 ﻿{
-  "defaultFunctionName": "DurableFunctionsHttpStart",
+  "defaultFunctionName": "DurableFunctionsEntityHttpStart",
   "description": "$DurableFunctionsHttpStart_description",
-  "name": "Durable Functions HTTP starter",
+  "name": "Durable Functions Entity HTTP starter",
   "language": "TypeScript",
   "category": [
     "$temp_category_core",

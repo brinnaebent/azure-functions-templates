@@ -5,6 +5,5 @@
       "type": "entityTrigger",
       "direction": "in"
     }
-  ],
-  "scriptFile": "../DurableFunctionsEntityHttpStart-TypeScript/index.ts"
+  ]
 }

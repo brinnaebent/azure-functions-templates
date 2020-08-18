@@ -1,7 +1,7 @@
 ﻿{
-  "defaultFunctionName": "DurableFunctionsHttpStart",
+  "defaultFunctionName": "DurableFunctionsEntityHttpStart",
   "description": "$DurableFunctionsHttpStart_description",
-  "name": "Durable Functions HTTP starter",
+  "name": "Durable Functions Entity HTTP starter",
   "language": "JavaScript",
   "category": [
     "$temp_category_core",
@@ -9,9 +9,7 @@
   ],
   "categoryStyle": "other",
   "enabledInTryMode": false,
-  "userPrompt": [
-    "authLevel"
-  ],
+  "userPrompt": [],
   "extensions": [
     {
       "id": "Microsoft.Azure.WebJobs.Extensions.DurableTask", "version": "2.2.2"

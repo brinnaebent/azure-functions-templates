@@ -6,7 +6,7 @@
   ],
   "name": "DurableFunctionsEntityOrchestration",
   "identity": "Azure.Function.CSharp.DurableFunctionsEntityOrchestration.2.x",
-  "groupIdentity": "Azure.Function.DurableFunctionsOrchestration",
+  "groupIdentity": "Azure.Function.DurableFunctionsEntityOrchestration",
   "shortName": "durableentity",
   "tags": {
     "language": "C#",

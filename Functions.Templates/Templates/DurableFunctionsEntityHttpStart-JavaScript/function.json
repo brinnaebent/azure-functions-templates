@@ -1,11 +1,11 @@
 ﻿{
   "bindings": [
     {
-      "authLevel": "anonymous",
+      "authLevel": "function",
       "name": "req",
       "type": "httpTrigger",
       "direction": "in",
-      "route": "counters/{id}",
+      "route": "orchestrators/{functionName}",
       "methods": [
         "post",
         "get"
@@ -17,7 +17,7 @@
       "direction": "out"
     },
     {
-      "name": "client",
+      "name": "starter",
       "type": "orchestrationClient",
       "direction": "in"
     }
