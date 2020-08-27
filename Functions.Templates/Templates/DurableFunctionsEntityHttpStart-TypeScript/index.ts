@@ -3,7 +3,7 @@ import * as df from "durable-functions"
 
 const httpStart: AzureFunction = async function (context: Context, req: HttpRequest) {
     const client = df.getClient(context);
-    const id: string = context.bindingData.id;
+    const id: string = req.params.id;
     const entityId = new df.EntityId("Counter", id);
 
     // reset value

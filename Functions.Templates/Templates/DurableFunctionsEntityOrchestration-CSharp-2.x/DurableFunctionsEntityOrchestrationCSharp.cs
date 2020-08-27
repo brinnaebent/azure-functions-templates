@@ -9,31 +9,14 @@ namespace Company.Function
 {
     public static class DurableFunctionsEntityOrchestrationCSharp
     {
-        [FunctionName("DurableFunctionsEntityOrchestrationCSharp_CounterOrchestrator")]
-        public static async Task Orchestrator(
-        [OrchestrationTrigger] IDurableOrchestrationContext context)
-        {
-            var entityId = new EntityId(nameof(Counter), "myCounter");
-
-            // Two-way call to the entity which returns a value - awaits the response
-            int currentValue = await context.CallEntityAsync<int>(entityId, "get");
-            if (currentValue < 10)
-            {
-                // One-way signal to the entity which updates the value - does not await a response
-                context.SignalEntity(entityId, "add", 1);
-            }
-        }
-
         [FunctionName("DurableFunctionsEntityOrchestrationCSharp_CounterHttpStart")]
         public static async Task<HttpResponseMessage> Run(
-        [HttpTrigger(AuthorizationLevel.Function)] HttpRequestMessage req,
-        [DurableClient] IDurableOrchestrationClient client,
-        ILogger log)
+        [HttpTrigger(AuthorizationLevel.Function, Route = "Counter/{entityKey}")] HttpRequestMessage req,
+        [DurableClient] IDurableEntityClient client,
+        string entityKey)
         {
-            string instanceId = await client.StartNewAsync("DurableFunctionsEntityOrchestrationCSharp_CounterOrchestrator", null);
-
-            log.LogInformation($"Started orchestration with ID = '{instanceId}'.");
-
+            var entityId = new EntityId("Counter", entityKey);
+            await client.SignalEntity(entityId, "add", 1);
             return client.CreateCheckStatusResponse(req, instanceId);
         }
 
