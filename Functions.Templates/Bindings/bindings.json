@@ -1095,7 +1095,7 @@
       "enabledInTryMode": false,
       "documentation": "$content=Documentation\\activityTrigger.md",
       "extension": {
-        "id": "Microsoft.Azure.WebJobs.Extensions.DurableTask", "version": "1.8.5"
+        "id": "Microsoft.Azure.WebJobs.Extensions.DurableTask", "version": "1.8.6"
       },
       "settings": [
         {
@@ -1128,8 +1128,7 @@
       "enabledInTryMode": false,
       "documentation": "$content=Documentation\\orchestrationTrigger.md",
       "extension": {
-        "id": "Microsoft.Azure.WebJobs.Extensions.DurableTask",
-        "version": "1.8.5"
+        "id": "Microsoft.Azure.WebJobs.Extensions.DurableTask", "version": "1.8.6"
       },
       "settings": [
         {
@@ -1195,7 +1194,7 @@
       "enabledInTryMode": false,
       "documentation": "$content=Documentation\\orchestrationClientIn.md",
       "extension": {
-        "id": "Microsoft.Azure.WebJobs.Extensions.DurableTask", "version": "1.8.5"
+        "id": "Microsoft.Azure.WebJobs.Extensions.DurableTask", "version": "1.8.6"
       },
       "settings": [
         {
@@ -1221,7 +1220,7 @@
       "enabledInTryMode": false,
       "documentation": "$content=Documentation\\orchestrationClientIn.md",
       "extension": {
-        "id": "Microsoft.Azure.WebJobs.Extensions.DurableTask", "version": "2.1.1"
+        "id": "Microsoft.Azure.WebJobs.Extensions.DurableTask", "version": "2.3.0"
       },
       "settings": [
         {
