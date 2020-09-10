@@ -175,9 +175,6 @@
     <file src="../../Functions.Templates/templates/DurableFunctionsEntity-JavaScript/index.js" target="Templates/DurableFunctionsEntity-JavaScript/index.js" />
     <file src="../../Functions.Templates/templates/DurableFunctionsEntity-JavaScript/function.json" target="Templates/DurableFunctionsEntity-JavaScript/function.json" />
     <file src="../../Functions.Templates/templates/DurableFunctionsEntity-JavaScript/metadata.json" target="Templates/DurableFunctionsEntity-JavaScript/metadata.json" />
-    <file src="../../Functions.Templates/templates/DurableFunctionsEntityOrchestrator-CSharp-2.x/DurableFunctionsEntityOrchestratorCSharp.csx" target="Templates/DurableFunctionsEntityOrchestrator-CSharp/run.csx" />
-    <file src="../../Functions.Templates/templates/DurableFunctionsEntityOrchestrator-CSharp-2.x/function.json" target="Templates/DurableFunctionsEntityOrchestrator-CSharp/function.json" />
-    <file src="../../Functions.Templates/templates/DurableFunctionsEntityOrchestrator-CSharp-2.x/metadata.json" target="Templates/DurableFunctionsEntityOrchestrator-CSharp/metadata.json" />
     <file src="../../Functions.Templates/templates/DurableFunctionsEntity-TypeScript/index.ts" target="Templates/DurableFunctionsEntity-TypeScript/index.ts" />
     <file src="../../Functions.Templates/templates/DurableFunctionsEntity-TypeScript/function.json" target="Templates/DurableFunctionsEntity-TypeScript/function.json" />
     <file src="../../Functions.Templates/templates/DurableFunctionsEntity-TypeScript/metadata.json" target="Templates/DurableFunctionsEntity-TypeScript/metadata.json" />

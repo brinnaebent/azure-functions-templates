@@ -1,9 +1,10 @@
+using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Extensions.DurableTask;
 using Microsoft.Azure.WebJobs.Extensions.Http;
-using Microsoft.Extensions.Logging;
+using Newtonsoft.Json.Linq;
 
 namespace Company.Function
 {
@@ -16,8 +17,15 @@ namespace Company.Function
         string entityKey)
         {
             var entityId = new EntityId("Counter", entityKey);
-            await client.SignalEntity(entityId, "add", 1);
-            return client.CreateCheckStatusResponse(req, instanceId);
+
+            if (req.Method == HttpMethod.Post)
+            {
+                await client.SignalEntityAsync(entityId, "add", 1);
+                return req.CreateResponse(HttpStatusCode.OK);
+            }
+
+            EntityStateResponse<JObject> stateResponse = await client.ReadEntityStateAsync<JObject>(entityId);
+            return req.CreateResponse(HttpStatusCode.OK, stateResponse.EntityState);
         }
 
         [FunctionName("Counter")]
