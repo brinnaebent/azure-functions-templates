@@ -8,11 +8,11 @@ using Newtonsoft.Json.Linq;
 
 namespace Company.Function
 {
-    public static class DurableFunctionsEntityOrchestrationCSharp
+    public static class DurableFunctionsEntityHttpCSharp
     {
-        [FunctionName("DurableFunctionsEntityOrchestrationCSharp_CounterHttpStart")]
+        [FunctionName("DurableFunctionsEntityCSharp_CounterHttpStart")]
         public static async Task<HttpResponseMessage> Run(
-        [HttpTrigger(AuthorizationLevel.Function, Route = "Counter/{entityKey}")] HttpRequestMessage req,
+        [HttpTrigger(AuthorizationLevel.Function] HttpRequestMessage req,
         [DurableClient] IDurableEntityClient client,
         string entityKey)
         {
@@ -29,18 +29,18 @@ namespace Company.Function
         }
 
         [FunctionName("Counter")]
-        public static void Counter([EntityTrigger] IDurableEntityContext ctx)
+        public static void Counter([EntityTrigger] IDurableEntityContext context)
         {
-            switch (ctx.OperationName.ToLowerInvariant())
+            switch (context.OperationName.ToLowerInvariant())
             {
                 case "add":
-                    ctx.SetState(ctx.GetState<int>() + ctx.GetInput<int>());
+                    context.SetState(context.GetState<int>() + context.GetInput<int>());
                     break;
                 case "reset":
-                    ctx.SetState(0);
+                    context.SetState(0);
                     break;
                 case "get":
-                    ctx.Return(ctx.GetState<int>());
+                    context.Return(context.GetState<int>());
                     break;
             }
         }

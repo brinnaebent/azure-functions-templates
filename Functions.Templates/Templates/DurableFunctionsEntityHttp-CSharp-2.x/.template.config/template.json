@@ -22,10 +22,10 @@
   },
   "primaryOutputs": [
     {
-      "path": "DurableFunctionsEntityOrchestrationCSharp.cs"
+      "path": "DurableFunctionsEntityCSharp.cs"
     }
   ],
-  "defaultName": "DurableFunctionsEntityOrchestrationCSharp",
+  "defaultName": "DurableFunctionsEntityCSharp",
   "postActions": [
     {
       "Description": "Adding Reference to Microsoft.Azure.WebJobs.Extensions.DurableTask NuGet package",
