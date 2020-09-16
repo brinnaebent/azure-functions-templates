@@ -11,6 +11,6 @@ module.exports = async function (context, req) {
     } else {
         // reads current state of entity
         const stateResponse = await client.readEntityState(entityId);
-        return stateResponse.entityState;
+        return { body: stateResponse.entityState };
     }
 };

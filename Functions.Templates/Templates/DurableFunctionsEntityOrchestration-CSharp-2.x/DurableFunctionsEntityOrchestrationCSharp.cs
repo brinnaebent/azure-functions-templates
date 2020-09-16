@@ -24,7 +24,7 @@ namespace Company.Function
                 return req.CreateResponse(HttpStatusCode.OK);
             }
 
-            EntityStateResponse<JObject> stateResponse = await client.ReadEntityStateAsync<JObject>(entityId);
+            EntityStateResponse<JToken> stateResponse = await client.ReadEntityStateAsync<JToken>(entityId);
             return req.CreateResponse(HttpStatusCode.OK, stateResponse.EntityState);
         }
 

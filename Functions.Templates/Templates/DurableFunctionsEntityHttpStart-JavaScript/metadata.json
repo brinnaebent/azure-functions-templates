@@ -1,5 +1,5 @@
 ﻿{
-  "defaultFunctionName": "Counter",
+  "defaultFunctionName": "DurableFunctionsEntityHttpStart",
   "description": "$DurableFunctionsHttpStart_description",
   "name": "Durable Functions Entity HTTP starter",
   "language": "JavaScript",

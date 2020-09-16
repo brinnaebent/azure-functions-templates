@@ -1,4 +1,4 @@
-﻿﻿import { AzureFunction, Context, HttpRequest } from "@azure/functions"
+﻿import { AzureFunction, Context, HttpRequest } from "@azure/functions"
 import * as df from "durable-functions"
 
 const httpStart: AzureFunction = async function (context: Context, req: HttpRequest) {
@@ -11,7 +11,8 @@ const httpStart: AzureFunction = async function (context: Context, req: HttpRequ
         await client.signalEntity(entityId, "add", 1);
     } else {
         // reads current state of entity
-        return await client.readEntityState<number>(entityId);
+        const stateResponse = await client.readEntityState<number>(entityId);
+        return { body: stateResponse.entityState };
     }
 };
 

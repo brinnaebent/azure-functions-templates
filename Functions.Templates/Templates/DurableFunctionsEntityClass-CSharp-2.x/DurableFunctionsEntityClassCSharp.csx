@@ -1,10 +1,20 @@
-#r "Microsoft.Azure.WebJobs.Extensions.DurableTask"
+/*
+* This function is not intended to be invoked directly. Instead it will be
+* triggered by a client function.
+* 
+* Before running this sample, please:
+* - create a Durable entity HTTP function
+*/
 
+#r "Microsoft.Azure.WebJobs.Extensions.DurableTask"
+#r "Newtonsoft.Json"
+
+using Newtonsoft.Json;
 using Microsoft.Azure.WebJobs.Extensions.DurableTask;
 
-[JsonObject(MemberSerialization.OptIn)]
 public class Counter
 {
+
     [JsonProperty("value")]
     public int CurrentValue { get; set; }
 
@@ -13,8 +23,7 @@ public class Counter
     public void Reset() => this.CurrentValue = 0;
 
     public int Get() => this.CurrentValue;
-
-    [FunctionName(nameof(Counter))]
-    public static Task Run([EntityTrigger] IDurableEntityContext ctx)
-        => ctx.DispatchAsync<Counter>();
 }
+
+public static void Run(IDurableEntityContext context)
+    => context.DispatchAsync<Counter>();

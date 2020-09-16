@@ -1826,6 +1826,6 @@ function app.</value>
     <value>The name used to identify this binding in your code</value>
   </data>
   <data name="entityTrigger_name_label" xml:space="preserve">
-    <value>entityTrigger_name_label</value>
+    <value>Entity Name</value>
   </data>
 </root>

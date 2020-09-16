@@ -1,7 +1,7 @@
 {
-  "defaultFunctionName": "DurableFunctionsEntityClass",
+  "defaultFunctionName": "Counter",
   "description": "$DurableFunctionsEntityClass_description",
-  "name": "Durable Functions entity",
+  "name": "Durable Functions entity (class)",
   "language": "C#",
   "category": [
     "$temp_category_durableFunctions"

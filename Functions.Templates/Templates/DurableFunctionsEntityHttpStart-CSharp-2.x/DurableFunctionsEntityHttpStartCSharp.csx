@@ -2,21 +2,23 @@
 #r "Newtonsoft.Json"
 
 using System.Net;
+using Newtonsoft.Json.Linq;
 using Microsoft.Azure.WebJobs.Extensions.DurableTask;
+using Microsoft.AspNetCore.Mvc;
 
-public static async Task<HttpResponseMessage> Run(
-    [HttpTrigger(AuthorizationLevel.Function, Route = "Counter/{entityKey}")] HttpRequestMessage req,
-    [DurableClient] IDurableEntityClient client,
+public static async Task<IActionResult> Run(
+    HttpRequest req,
+    IDurableEntityClient client,
     string entityKey)
 {
     var entityId = new EntityId("Counter", entityKey);
 
-    if (req.Method == HttpMethod.Post)
+    if (req.Method.Equals("POST"))
     {
         await client.SignalEntityAsync(entityId, "add", 1);
-        return req.CreateResponse(HttpStatusCode.OK);
+        return new OkObjectResult("Added to the entity");
     }
 
-    EntityStateResponse<JObject> stateResponse = await client.ReadEntityStateAsync<JObject>(entityId);
-    return req.CreateResponse(HttpStatusCode.OK, stateResponse.EntityState);
+    EntityStateResponse<JToken> stateResponse = await client.ReadEntityStateAsync<JToken>(entityId);
+    return new OkObjectResult(stateResponse);
 }

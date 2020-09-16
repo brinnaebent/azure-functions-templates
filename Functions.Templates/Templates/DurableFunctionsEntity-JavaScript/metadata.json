@@ -1,5 +1,5 @@
 ﻿{
-  "defaultFunctionName": "DurableFunctionsEntityJS",
+  "defaultFunctionName": "Counter",
   "description": "$DurableFunctionsEntity_description",
   "name": "Durable Functions entity",
   "language": "JavaScript",
